@@ -33,4 +33,16 @@ Generate Summaries:
 
 ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/efinotes3.png)
 
+Model View Controller Architecture
+
+MODEL:
+    BERT
+View:
+    HTML + Bootstrap
+Controller: 
+    Flask
+
 ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/efinotes4.png)
+
+Backend:
+ 
