@@ -52,7 +52,7 @@ Controller:
 
 Backend:
  
-    ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/google-cloud-logo2-1080x675.jpg) ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/Unknown.png)
+    ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/google-cloud-logo2-1080x675.jpg) 
+    ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/Unknown.png)
     
 
-https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/Unknown-1.png
