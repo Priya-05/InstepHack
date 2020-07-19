@@ -4,7 +4,7 @@
 # In[8]:
 
 
-import os 
+import os
 from pydub import AudioSegment
 from pydub.silence import split_on_silence
 import speech_recognition as sr
@@ -22,7 +22,7 @@ def get_large_audio_transcription(path):
     and apply speech recognition on each of these chunks
     """
     # open the audio file using pydub
-    sound = AudioSegment.from_wav(path)  
+    sound = AudioSegment.from_wav(path)
     # split audio sound where silence is 700 miliseconds or more and get chunks
     chunks = split_on_silence(sound,
         # experiment with this value for your target audio file
@@ -36,9 +36,9 @@ def get_large_audio_transcription(path):
     # create a directory to store the audio chunks
     if not os.path.isdir(folder_name):
         os.mkdir(folder_name)
-        
+
     whole_text = ""
-    # process each chunk 
+    # process each chunk
     for i, audio_chunk in enumerate(chunks, start=1):
         # export audio chunk and save it in
         # the `folder_name` directory.
@@ -58,17 +58,3 @@ def get_large_audio_transcription(path):
                 whole_text += text
     # return the text for all chunks detected
     return whole_text
-
-
-# In[14]:
-
-
-path = "/Users/uwaeze/wayneOlson.wav"
-print(get_large_audio_transcription(path))
-
-
-# In[ ]:
-
-
-
-
