@@ -134,7 +134,7 @@ def text_writer(file,body):
     None.
 
     """
-    with open("outputBert.txt", "w", encoding="utf-8") as f:
+    with open(file, "w", encoding="utf-8") as f:
         a,b,c,d=summarize_elements(body,summarizer_ext=True)
         result,date = summarizer(body)
         f.write("Summary: \n")
