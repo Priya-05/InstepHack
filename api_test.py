@@ -23,13 +23,13 @@ nltk.download('words')
 
 """A file opener for debuging
 """
-"""
+
 with open('input.txt', 'r',encoding="utf8") as file:
     body = file.read().replace('\n', '')
-"""
 
 
-def summarizer(argumet,ratio_t=0.5):
+
+def summarizer(argumet,ratio_t=0.5,summarizer_ext=False):
     """
     
 
@@ -40,13 +40,18 @@ def summarizer(argumet,ratio_t=0.5):
     ratio_t : float, optional
         It specifies how much of the original text we wish to keep. 
         The default is 0.5.
+    summarizer_ext : Boolean, optional
+        If True will summarize further the keynotes on Organizations and people.
+        The default is False.
 
     Returns
     -------
     full : String
         The summary of our text(argument variable).
-    dates : String
+    dates : DataObject
         The key dates from the text(argument variable).
+    date_tuple: List
+        Contains a pair of dates and the associated text for them
 
     """
     model = Summarizer()
@@ -54,10 +59,22 @@ def summarizer(argumet,ratio_t=0.5):
     full = ''.join(result)
     dates1 = re.findall(r'\d+\S\d+\S\d+', argumet)
     dates2 = re.findall(r'[A-Z]\w+\s\d+', argumet)
-    dates = dates1+ dates2
-    return full,dates
+    dates = dates1 + dates2
+    a_list = nltk.tokenize.sent_tokenize(argumet)
+    date_tuple = []
+    sent = ""
+    for dat in dates:
+        dat = str(dat)
+        for element in a_list:
+            if dat in element:
+                sent = sent + " " + element
+        date_tuple.append([dat,sent])
+    if summarizer_ext:
+        for index in range(len(date_tuple)):
+                date_tuple[index][1] = model(date_tuple[index][1])
+    return full,dates,date_tuple
 
-
+                              
 
 def summarize_elements(argumet,summarizer_ext=False):
     """
@@ -113,9 +130,9 @@ def summarize_elements(argumet,summarizer_ext=False):
                 
     if summarizer_ext:
         for index in range(len(org_tuple)):
-            org_tuple[index][1],_ = summarizer(org_tuple[index][1])
+            org_tuple[index][1],_,_ = summarizer(org_tuple[index][1])
         for index in range(len(people_tuple)):
-            people_tuple[index][1],_ = summarizer(people_tuple[index][1])
+            people_tuple[index][1],_,_ = summarizer(people_tuple[index][1])
     return org_tuple,people_tuple,organization,people
 
 
@@ -136,7 +153,7 @@ def text_writer(file,body):
     """
     with open(file, "w", encoding="utf-8") as f:
         a,b,c,d=summarize_elements(body,summarizer_ext=True)
-        result,date = summarizer(body)
+        result,date,e = summarizer(body,summarizer_ext=True)
         f.write("Summary: \n")
         f.write(result)
         f.write('\n')
@@ -169,9 +186,16 @@ def text_writer(file,body):
             f.write('\n')
             f.write(stat)
             f.write('\n')
+            
+        f.write("Dates + Statement: \n")
+        for date,stat in e:
+            f.write(date)
+            f.write('\n')
+            f.write(stat)
+            f.write('\n')
         
         f.close()
-        
+text_writer("out.txt",body)   
 """The print for the time debuging
 """    
 """
