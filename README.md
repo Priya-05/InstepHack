@@ -1,4 +1,4 @@
-# EfiMeet - InstepHack
+# EfiMeets - InstepHack
 Problem Statement: Build a prototype to capture real time audio
 
     There has been a permanent shift towards a virtual workplace
@@ -63,7 +63,7 @@ Controller:
 
 Backend:
  
-   EfiMeet takes advantage of python's PYDUB and SpeechRecognition library and googles speech-to-text api
+   EfiMeets takes advantage of python's PYDUB and SpeechRecognition library and googles speech-to-text api
    
    ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/google%20cloud%20logo.jpg) 
    ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/Unknown.png)
