@@ -39,7 +39,7 @@ MODEL:
 
     BERT, or Bidirectional Encoder Representations from Transformers, is a new method of pre-training language representations which obtains state-of-the-art       results on a wide array of Natural Language Processing (NLP) tasks.
 
-
+    GitHub - https://github.com/google-research/bert
     
   ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/bert_images.jpeg)
   
@@ -53,7 +53,9 @@ View:
 
 Controller: 
 
-    Flask
+    Flask - is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
+    
+    Flask Documentation - https://pymbook.readthedocs.io/en/latest/flask.html
         
         ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/Unknown.png)
 
@@ -61,6 +63,8 @@ Controller:
 
 Backend:
  
+   EfiMeet takes advantage of python's PYDUB and SpeechRecognition library and googles speech-to-text api
+   
    ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/google%20cloud%20logo.jpg) 
    ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/Unknown.png)
     
