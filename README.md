@@ -1,4 +1,4 @@
-# InstepHack
+# EfiMeet - InstepHack
 Problem Statement: Build a prototype to capture real time audio
 
     There has been a permanent shift towards a virtual workplace
