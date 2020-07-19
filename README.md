@@ -38,6 +38,10 @@ Model View Controller Architecture
 MODEL:
 
     BERT
+    
+  ![alt text](https://github.com/Priya-05/InstepHack/blob/master/Screenshots/images/bert_images.jpeg)
+  
+  
 View:
 
     HTML + Bootstrap
